@@ -11,7 +11,6 @@ tags:
 - slurm
 ---
 
-
 **Knowledge**: :star: :star: :star: :star:
 
 **Reading time**: 30 minutes
@@ -152,7 +151,7 @@ ansible-galaxy collection install -r requirements.yaml
           key: "{{ rocky_linux8_slurm_controller_node_ssh_public_key }}"
         when: inventory_hostname == 'rocky-linux8-slurm-compute-node'
 
-      - name: Add the Compute Node to the Controller Node's `known_hosts` file
+      - name: Add the Compute Node to the Controller Node's known_hosts file
         become: true
         ansible.builtin.known_hosts:
           path: /root/.ssh/known_hosts
@@ -732,7 +731,6 @@ ansible-galaxy collection install -r requirements.yaml
         ansible.builtin.debug:
           msg: "{{ srun_hostname_output_from_compute_node }}"
     ```
-
 
 ### Notes on the Slurm installation for Rocky Linux 8
 
@@ -1529,7 +1527,6 @@ EOF
         when: inventory_hostname == 'rocky-linux9-slurm-controller-node'
     ```
 
-
 ## Slurm setup on Rocky Linux 10
 
 Ansible `hosts` file setup:
@@ -2291,7 +2288,6 @@ EOF
         when: inventory_hostname == 'rocky-linux10-slurm-controller-node'
     ```
 
-
 ## Conclusion
 
 Now that you have your `slurm` cluster running on Rocky Linux, there are almost infinite possibilities on where to go next. Here are a few practical options for your home lab:
@@ -2304,7 +2300,7 @@ Now that you have your `slurm` cluster running on Rocky Linux, there are almost 
 
 * For an added challenge, try running a Minecraft or similar game server on your `slurm` cluster.
 
-The list is endless, and  `slurm` is massively used in HPC and data science.
+The list is endless, and `slurm` is massively used in HPC and data science.
 
 ## References
 
